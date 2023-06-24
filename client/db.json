@@ -1,0 +1,39 @@
+{
+  "works": [
+    {
+      "id": "866e2161-5200-47f0-aca0-ab6c0817be8e",
+      "title": "A Reminder",
+      "date": "2022-12-23",
+      "details": [
+        {
+          "id": "7f81acd3-b64c-47dd-ad3b-1ceacb36ef2a",
+          "title": "vgfcds",
+          "complete": true
+        },
+        {
+          "id": "30509d1b-f6be-4b45-a4b7-36158abc589b",
+          "title": "vgfd",
+          "complete": false
+        }
+      ]
+    }
+  ],
+  "reminders": [
+    {
+      "id": "c243b6c4-7752-453b-96fc-4fa6db8f1fc3",
+      "title": "Programming",
+      "date": "2022-11-30",
+      "time": "19:01",
+      "description": "wsedrfgtgh vfds fdesw"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "a99e2531-3fc7-423e-b822-fa2c32b3cb82",
+      "title": "A Reminder",
+      "date": "2022-12-14",
+      "amount": "123",
+      "description": "gtrfed rfedws"
+    }
+  ]
+}

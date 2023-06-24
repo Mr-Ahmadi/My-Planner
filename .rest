@@ -1,0 +1,88 @@
+GET http://localhost:4000/user/checkAuth
+
+###
+POST  http://localhost:4000/user/signup 
+Content-Type: application/json
+
+{
+    "name": "fdxs frdesw", 
+    "email": "JohnDoeout@look.com",
+    "password": "Password1"
+}
+
+###
+POST  http://localhost:4000/user/signin 
+Content-Type: application/json
+
+{
+    "email": "JohnDoeout@look.com",
+    "password": "Password1"
+}
+
+###
+POST  http://localhost:4000/user/signout
+
+###
+POST  http://localhost:4000/user/changepass
+Content-Type: application/json
+
+{
+    "oldPassword": "Password1",
+    "newPassword": "Password1"
+}
+
+###
+GET http://localhost:4000/user/deleteaccount
+
+###
+POST http://localhost:4000/uploadfile
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="file"; filename="Sintel.mp4"
+Content-Type: video/mp4
+
+< http://media.w3.org/2010/05/sintel/trailer.mp4
+------WebKitFormBoundary--
+
+###
+POST http://localhost:4000/addPlan/rveve
+Content-Type: application/json
+
+{
+    "title": "6380acc04ee36844968ff272",
+    "date": "9449462bc23c1fbc212b0d34fd936ba4",
+    "time": "bgvfcd",
+    "amount": 23
+}
+
+###
+GET http://localhost:4000/listfiles
+
+###
+POST http://localhost:4000/loadfile
+Content-Type: application/json
+
+{
+    "filename": "9449462bc23c1fbc212b0d34fd936ba4"
+}
+###
+POST http://localhost:4000/addnote
+Content-Type: application/json
+
+{
+    "fileID": "6380acc04ee36844968ff272",
+    "note": {
+        "title": "A title",
+        "selectedTime": {"hour": 0, "min": 0, "sec": 56}
+    }
+}
+
+###
+POST http://localhost:4000/deletenote
+Content-Type: application/json
+
+{
+    "fileID": "6380acc04ee36844968ff272",
+    "noteID": "6380ad614ee36844968ff286"
+}
