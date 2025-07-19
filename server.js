@@ -21,12 +21,22 @@ app.use(cookieParser())
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 
-//start server(first database connection => then express server)
 const startServer = async _ => {
     try {
-        await mongoose.connect(process.env.DB_URI, {dbName: process.env.DB_NAME}, {useNewUrlParser: true})
-        app.listen(4000, _ => console.log('Server running on http://localhost:4000'))
+        // Set strictQuery explicitly to avoid the warning
+        mongoose.set('strictQuery', false); // or true if you prefer strict schema compliance
+
+        // Correct usage: URI first, then options
+        await mongoose.connect(process.env.DB_URI, {
+            // dbName: process.env.DB_NAME,
+            useNewUrlParser: true,
+            useUnifiedTopology: true, // add this to avoid another potential warning
+        });
+
+        app.listen(4000, _ => console.log('Server running on http://localhost:4000'));
     } catch (err) {
-        console.log('Failed to connect database =>\n' + err)
+        console.log('Failed to connect database =>\n' + err);
     }
-}; startServer();
+};
+
+startServer();
